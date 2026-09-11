@@ -29,6 +29,21 @@ pip install -e .
 ### Requirements
 Python 3.8 and above, MS Visual Studio 2019 and above
 
+## API Reference
+
+### `hitspy.run_tabu_search`
+
+Executes an OpenMP-accelerated discrete Tabu Search algorithm for feature selection and subset optimization.
+
+```python
+hitspy.run_tabu_search(
+    X: numpy.ndarray,
+    y: numpy.ndarray,
+    b0: numpy.ndarray,
+    d: int,
+    iSeed: int
+) -> numpy.ndarray
+
 ## Acknowledgements 
 
 I would like to thank Dr. **Alexandros Louka** and Professor **Yannis Bilias** for their valuable help and the shared ideas for the development of HITSr. The development of the HITSr software was supported by the Hellenic Foundation for Research and Innovation (H.F.R.I.) under the '2nd Call for H.F.R.I. Research Projects to support Post-Doctoral Researchers' (Project Number: 902). 
