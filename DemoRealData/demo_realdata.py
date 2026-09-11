@@ -18,7 +18,7 @@ p_in = p     # intercept + attributes
 #X = np.random.randn(p_in, T).astype(np.float64)
 #y = np.random.choice([-1, 1], size=T).astype(np.int32)
 b0 = -1.0
-d = 10           # domain parameter (currently unused in core logic)
+d = 1e4           # domain parameter (currently unused in core logic)
 
 #attrs, coeffs, score = tabu_search.run_tabu_search(X, y, b0, d)
 #attrs, coeffs, score = tabu_search.run_tabu_search(X, y, b0, d, iSeed=12345)

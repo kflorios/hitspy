@@ -19,7 +19,7 @@ p_in = p     # intercept + attributes
 #y = np.random.choice([-1, 1], size=T).astype(np.int32)
 b0 = -1.0 #Martins, Kordas
 #b0 = 1.0 #Moro
-d = 10           # domain parameter (currently unused in core logic)
+d = 1e4           # domain parameter (currently unused in core logic)
 
 #Martins
 Nreps=30
