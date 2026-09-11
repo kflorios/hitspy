@@ -8,7 +8,7 @@ extern "C" int run_tabu_search(
     int p_in,
     int* y_in,
     double b0,
-    int d,
+    double d,
     int iSeed,                 // <-- NEW ARGUMENT
     int* out_attributes,
     double* out_coeffs,
@@ -20,7 +20,7 @@ namespace py = pybind11;
 py::tuple py_run_tabu_search(py::array_t<double> X,
                              py::array_t<int> y,
                              double b0,
-                             int d,
+                             double d,
                              int iSeed)
 {
     if (X.ndim() != 2)
