@@ -32,7 +32,7 @@ I would like to thank Dr. **Alexandros Louka** and Professor **Yannis Bilias** f
 
 ## Citation
 
-If you use `hitsr` in your research, please cite the underlying methodology papers:
+If you use `hitspy` in your research, please cite the underlying methodology papers:
 
 ```bibtex
 @article{florios2025hits,
