@@ -43,6 +43,7 @@ hitspy.run_tabu_search(
     d: int,
     iSeed: int
 ) -> numpy.ndarray
+```
 
 ## Acknowledgements 
 
