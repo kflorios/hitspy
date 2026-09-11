@@ -39,8 +39,8 @@ Executes an OpenMP-accelerated discrete Tabu Search algorithm for maximum score 
 hitspy.run_tabu_search(
     X: numpy.ndarray,
     y: numpy.ndarray,
-    b0: numpy.ndarray,
-    d: int,
+    b0: float,
+    d: float,
     iSeed: int
 ) -> numpy.ndarray
 ```
