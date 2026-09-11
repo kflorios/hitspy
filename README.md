@@ -23,7 +23,7 @@ in your preferred environment:
 
 ```bash
 pip install -e .
-
+```
 ---
 
 ## Acknowledgements 
