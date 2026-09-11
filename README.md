@@ -27,7 +27,7 @@ pip install -e .
 ---
 
 ### Requirements
-Python 3.8 and above, MSVStudio 2019 and above
+Python 3.8 and above, MS Visual Studio 2019 and above
 
 ## Acknowledgements 
 
