@@ -33,7 +33,7 @@ Python 3.8 and above, MS Visual Studio 2019 and above
 
 ### `hitspy.run_tabu_search`
 
-Executes an OpenMP-accelerated discrete Tabu Search algorithm for feature selection and subset optimization.
+Executes an OpenMP-accelerated discrete Tabu Search algorithm for maximum score estimator computation.
 
 ```python
 hitspy.run_tabu_search(
