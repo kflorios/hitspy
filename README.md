@@ -45,6 +45,72 @@ hitspy.run_tabu_search(
 ) -> numpy.ndarray
 ```
 
+## Complete Example: Multi-Seed Benchmark (20 Random Starts)
+
+This benchmark demonstrates how to execute 20 distinct random restarts using `hitspy`, summarize overall solution quality, and compute selection frequency statistics for each attribute.
+
+```python
+import numpy as np
+import pandas as pd
+from hitspy import run_tabu_search
+
+# 1. Load and preprocess data
+X_raw = np.loadtxt("X.txt")
+y_raw = np.loadtxt("y.txt")
+
+X = X_raw[:, 1:]
+y = y_raw[:, 1].astype(int)
+X=np.transpose(X)
+X = np.ascontiguousarray(X, dtype=np.float64)
+
+# 2. Parameters
+b0 = -1.0
+d = 10000
+num_runs = 20
+
+# Generate 20 distinct random seeds
+np.random.seed(42)  # For reproducible seed generation
+seeds = np.random.randint(0, 1000000, size=num_runs)
+
+# 3. Storage for results
+results_list = []
+
+print("Starting 20 runs...")
+
+# 4. Run loop
+for i in range(num_runs):
+    print('run...:',i+1)
+    current_seed = int(seeds[i])
+
+    # Execute Tabu Search
+    attrs, coeffs, score = run_tabu_search(X=X, y=y, b0=b0, d=d, iSeed=current_seed)
+
+    # hitspy returns 'attributes' as a 1D numpy array/list and 'score' / 'coeffs' as keys in the dict
+
+    # Save metrics
+    results_list.append(
+        {
+            "Run": i + 1,
+            "Seed": current_seed,
+            "Score": score,
+            "Coeffs": coeffs,
+            "Attrs": attrs
+        }
+    )
+
+# 5. Combine into a single DataFrame
+results_df = pd.DataFrame(results_list)
+
+# 6. Display results table
+print(results_df.to_string(index=False))
+
+# 7. Summary statistics
+print("\n=== Summary Across 20 Runs ===")
+print("Best Score Found: ", results_df["Score"].max())
+print("Mean Score:       ", results_df["Score"].mean())
+print("Score Std Dev:    ", results_df["Score"].std(ddof=1))
+```
+
 ## Acknowledgements 
 
 I would like to thank Dr. **Alexandros Louka** and Professor **Yannis Bilias** for their valuable help and the shared ideas for the development of HITSpy. The development of the HITSpy software was supported by the Hellenic Foundation for Research and Innovation (H.F.R.I.) under the '2nd Call for H.F.R.I. Research Projects to support Post-Doctoral Researchers' (Project Number: 902). 
