@@ -85,7 +85,7 @@ for i in range(num_runs):
     # Execute Tabu Search
     attrs, coeffs, score = run_tabu_search(X=X, y=y, b0=b0, d=d, iSeed=current_seed)
 
-    # hitspy returns 'attributes' as a 1D numpy array/list and 'score' / 'coeffs' as keys in the dict
+    # hitspy returns results in attrs, coeffs, score
 
     # Save metrics
     results_list.append(
