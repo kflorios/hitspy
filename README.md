@@ -83,15 +83,16 @@ for i in range(num_runs):
     current_seed = int(seeds[i])
 
     # Execute Tabu Search
-    attrs, coeffs, score = run_tabu_search(X=X, y=y, b0=b0, d=d, iSeed=current_seed)
+    #attrs, coeffs, score = run_tabu_search(X=X, y=y, b0=b0, d=d, iSeed=current_seed)
+    attrs, coeffs, score = run_tabu_search(X=X, y=y, b0=b0, d=d, iSeed=12345+i+1)
 
-    # hitspy returns results in attrs, coeffs, score
+    # hitspy returns 'attributes' as a 1D numpy array/list and 'score' / 'coeffs' as keys in the dict
 
     # Save metrics
     results_list.append(
         {
             "Run": i + 1,
-            "Seed": current_seed,
+            "Seed": 12345+i+1,
             "Score": score,
             "Coeffs": coeffs,
             "Attrs": attrs
